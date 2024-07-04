@@ -13,6 +13,7 @@
         "filament/filament": "^3.2",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
+        "mvenghaus/filament-plugin-translatable-inline": "3.0",
         "spatie/laravel-translatable": "^6.7",
         "statikbe/laravel-filament-chained-translation-manager": "^3.2"
     },

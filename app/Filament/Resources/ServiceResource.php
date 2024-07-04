@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Mvenghaus\FilamentPluginTranslatableInline\Forms\Components\TranslatableContainer;
 
 class ServiceResource extends Resource
 {
@@ -23,12 +24,17 @@ class ServiceResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Textarea::make('name')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('description')
-                    ->required()
-                    ->columnSpanFull(),
+                TranslatableContainer::make(
+                    Forms\Components\TextInput::make('name')
+                    ->required(),
+                )->onlyMainLocaleRequired()->columnSpanFull(),
+
+                TranslatableContainer::make(
+                    Forms\Components\Textarea::make('description')
+                    ->required(),
+                )->onlyMainLocaleRequired()->columnSpanFull(),
+
+
                 Forms\Components\TextInput::make('icon')
                     ->required(),
                 Forms\Components\Toggle::make('is_active')

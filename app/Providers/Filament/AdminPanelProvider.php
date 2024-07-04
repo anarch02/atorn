@@ -55,6 +55,7 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])->plugins([
                 \Statikbe\FilamentTranslationManager\FilamentChainedTranslationManagerPlugin::make(),
+                \Filament\SpatieLaravelTranslatablePlugin::make()->defaultLocales(config('app.available_locales')),
             ]);
     }
 }
